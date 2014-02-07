@@ -19,4 +19,7 @@ OTHER_FILES = ContrastEffect.qml  main.qml  WindowChrome.qml  WindowContainer.qm
 target.path = $$[QT_INSTALL_EXAMPLES]/qtwayland/qml-compositor
 sources.files = $$OTHER_FILES $$SOURCES $$HEADERS $$RESOURCES $$FORMS qml-compositor.pro
 sources.path = $$[QT_INSTALL_EXAMPLES]/qtwayland/qml-compositor
-INSTALLS += target sources
+INSTALLS += target
+
+RESOURCES += \
+    resources.qrc

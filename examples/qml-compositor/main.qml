@@ -39,7 +39,7 @@
 ****************************************************************************/
 
 import QtQuick 2.0
-import "compositor.js" as CompositorLogic
+import "../jsc/compositor.js" as CompositorLogic
 
 Item {
     id: root
@@ -56,7 +56,7 @@ Item {
         }
         anchors.fill: parent
         fillMode: Image.Tile
-        source: "background.jpg"
+        source: "qrc:/imbackground.jpg"
         smooth: true
     }
 
