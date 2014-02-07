@@ -56,7 +56,7 @@ Item {
         }
         anchors.fill: parent
         fillMode: Image.Tile
-        source: "qrc:/imbackground.jpg"
+        source: "qrc:/img/background.jpg"
         smooth: true
     }
 
