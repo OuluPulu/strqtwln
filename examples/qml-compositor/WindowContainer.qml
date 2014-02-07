@@ -176,7 +176,7 @@ Item {
     }
 
     Image {
-        source: "closebutton.png"
+        source: "../img/closebutton.png"
         smooth: true
 
         opacity: !isFullscreen && chrome && chrome.selected ? 1 : 0
