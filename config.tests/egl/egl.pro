@@ -8,7 +8,7 @@ QT = core
     CONFIG += link_pkgconfig
     PKGCONFIG += egl
 } else {
-    LIBS += -lEGL
+    LIBS += -lEGL -lwayland-server -lffi
 }
 
 # Input

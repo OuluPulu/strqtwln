@@ -5,7 +5,7 @@ QT = core
     CONFIG += link_pkgconfig
     PKGCONFIG += wayland-client
 } else {
-    LIBS += -lwayland-client
+    LIBS += -lwayland-client -lffi
 }
 
 # Input

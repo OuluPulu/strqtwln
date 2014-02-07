@@ -6,7 +6,7 @@ isEmpty(QMAKE_WAYLAND_SCANNER):error("QMAKE_WAYLAND_SCANNER not defined for this
     CONFIG += link_pkgconfig
     PKGCONFIG += wayland-client
 } else {
-    LIBS += -lwayland-client
+    LIBS += -lwayland-client -lffi
 }
 
 # Input

@@ -6,9 +6,9 @@ QT = core
 
 !contains(QT_CONFIG, no-pkg-config) {
     CONFIG += link_pkgconfig
-    PKGCONFIG += wayland-egl
+    PKGCONFIG += wayland-egl wayland-client
 } else {
-    LIBS += -lwayland-egl
+    LIBS += -lwayland-client -lffi -lwayland-egl -lwayland-server
 }
 
 # Input

@@ -72,6 +72,10 @@ typedef void (GL_APIENTRYP PFNGLEGLIMAGETARGETTEXTURE2DOESPROC) (GLenum target, 
 typedef void (GL_APIENTRYP PFNGLEGLIMAGETARGETRENDERBUFFERSTORAGEOESPROC) (GLenum target, GLeglImageOES image);
 #endif
 
+#ifndef EGL_WAYLAND_BUFFER_WL
+#define EGL_WAYLAND_BUFFER_WL		0x31D5
+#endif
+
 QT_BEGIN_NAMESPACE
 
 class WaylandEglClientBufferIntegrationPrivate
