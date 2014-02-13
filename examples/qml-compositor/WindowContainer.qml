@@ -51,11 +51,7 @@ Item {
     scale: targetScale
 
     visible: isFullscreen || !root.hasFullscreenWindow
-    onVisibleChanged: {
-        child.clientRenderingEnabled = visible
-        console.log("visibility changed: " + visible);
-    }
-
+    
     opacity: 0
 
     property real targetX
