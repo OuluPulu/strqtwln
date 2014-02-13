@@ -42,7 +42,7 @@ var windowList = null;
 var indexes = null;
 
 function relayout() {
-    if (windowList === null || windowList.length == 0)
+    if (windowList === null || windowList.length === 0)
         return;
 
     var dim = Math.ceil(Math.sqrt(windowList.length));

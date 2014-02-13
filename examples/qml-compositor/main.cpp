@@ -126,8 +126,9 @@ private slots:
         QWaylandSurface *surface = static_cast<QWaylandSurface *>(object);
         if (surface == m_fullscreenSurface)
             m_fullscreenSurface = 0;
+        emit fullscreenSurfaceChanged();
         QQuickItem *item = surface->surfaceItem();
-        emit windowDestroyed(QVariant::fromValue(item));
+        if (item) emit windowDestroyed(QVariant::fromValue(item));
     }
 
     void frameSwappedSlot() {

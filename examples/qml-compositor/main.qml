@@ -47,7 +47,7 @@ Item {
     property variant selectedWindow: null
     property bool hasFullscreenWindow: typeof compositor != "undefined" && compositor.fullscreenSurface !== null
 
-    onHasFullscreenWindowChanged: console.log("has fullscreen window: " + hasFullscreenWindow);
+//    onHasFullscreenWindowChanged: console.log("has fullscreen window: " + hasFullscreenWindow);
 
     Image {
         id: background
@@ -110,17 +110,20 @@ Item {
     }
 
     function windowDestroyed(window) {
-        var windowContainer = window.parent;
-        if (windowContainer.runDestroyAnimation)
-            windowContainer.runDestroyAnimation();
+        if (window)
+        {
+            var windowContainer = window.parent;
+            if (windowContainer.runDestroyAnimation)
+                windowContainer.runDestroyAnimation();
+        }
     }
 
     function removeWindow(window) {
         var windowContainer = window.parent;
-        CompositorLogic.removeWindow(windowContainer);
         windowContainer.chrome.destroy();
         windowContainer.destroy();
         compositor.destroyWindow(window);
+        CompositorLogic.removeWindow(windowContainer);
     }
 
     onHeightChanged: CompositorLogic.relayout();

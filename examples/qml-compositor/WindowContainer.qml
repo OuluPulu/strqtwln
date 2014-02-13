@@ -51,7 +51,7 @@ Item {
     scale: targetScale
 
     visible: isFullscreen || !root.hasFullscreenWindow
-    
+
     opacity: 0
 
     property real targetX
@@ -134,7 +134,9 @@ Item {
                     NumberAnimation { target: container; property: "scale"; easing.type: Easing.Linear; to: targetScale; duration: 400; }
                 }
                 ScriptAction {
-                    script: container.z = 0
+                    script:  {
+                        container.z = 0
+                    }
                 }
             }
         },
@@ -164,12 +166,17 @@ Item {
         NumberAnimation { target: scaleTransform; property: "yScale"; easing.type: Easing.Linear; to: 0.01; duration: 200; }
         NumberAnimation { target: scaleTransform; property: "xScale"; easing.type: Easing.Linear; to: 0.01; duration: 150; }
         NumberAnimation { target: container; property: "opacity"; easing.type: Easing.Linear; to: 0.0; duration: 150; }
-        ScriptAction { script: container.parent.removeWindow(child); }
+        ScriptAction { script: {
+                container.parent.removeWindow(child);
+            }
+        }
     }
 
     function runDestroyAnimation() {
+
         destroyAnimation.start();
     }
+
 
     Image {
         source: "../img/closebutton.png"
